@@ -1,6 +1,20 @@
 
 #include "Contact.hpp"
 
+std::string	Contact::truncate(std::string str) const
+{
+	std::string	dest;
+	if (str.length() > 10)
+	{
+		dest = str.substr(0, 9) + ".";
+	}
+	else
+	{
+		dest = str;
+	}
+	return (dest);
+}
+
 void	Contact::set_contact(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds)
 {
 	firstname = fn;
@@ -12,10 +26,6 @@ void	Contact::set_contact(std::string fn, std::string ln, std::string nn, std::s
 
 void	Contact::print_short(int index) const
 {
-	auto truncate = [](std::string str)
-	{
-		return (str.length() > 10 ? str.substr(0, 9) + "." : str);
-	};
 	std::cout << std::setw(10) << index << " | "
 			  << std::setw(10) << truncate(firstname) << " | "
 			  << std::setw(10) << truncate(lastname) << " | "
