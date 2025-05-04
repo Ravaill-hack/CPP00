@@ -5,6 +5,8 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS_FILES = \
 	main.cpp \
+	contact.cpp \
+	phonebook.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 

@@ -15,18 +15,18 @@ void	Contact::print_short(int index) const
 	auto truncate = [](std::string str)
 	{
 		return (str.length() > 10 ? str.substr(0, 9) + "." : str);
-	}
+	};
 	std::cout << std::setw(10) << index << " | "
 			  << std::setw(10) << truncate(firstname) << " | "
 			  << std::setw(10) << truncate(lastname) << " | "
-			  << std::setw(10) << truncate(nickname) << std::endl
+			  << std::setw(10) << truncate(nickname) << std::endl;
 }
 
 void	Contact::print_contact() const
 {
-	std::out << "First name: " << firstname << std::endl;
-	std::out << "Last name: " << lastname << std::endl;
-	std::out << "Nickname: " << nickname << std::endl;
-	std::out << "Phone number: " << phonenumber << std::endl;
-	std::out << "Darkest secret: " << darkestsecret << std::endl;
+	std::cout << "First name: " << firstname << std::endl;
+	std::cout << "Last name: " << lastname << std::endl;
+	std::cout << "Nickname: " << nickname << std::endl;
+	std::cout << "Phone number: " << phonenumber << std::endl;
+	std::cout << "Darkest secret: " << darkestsecret << std::endl;
 }

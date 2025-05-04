@@ -4,12 +4,12 @@
 
 #include "Contact.hpp"
 
-class Phonebook
+class PhoneBook
 {
 	private:
 		Contact	contacts[8];
 		int		ind_next_contact;
-	public
+	public:
 		PhoneBook();
 		void	add_contact();
 		void	search_contact() const;

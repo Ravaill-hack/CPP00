@@ -36,7 +36,7 @@ void	PhoneBook::search_contact() const
 	{
 		contacts[i].print_short(i);
 	}
-	std::cout << "Enter the index you want to display : "
+	std::cout << "Enter the index you want to display : ";
 	std::string input;
 	std::getline(std::cin, input);
 	if (input.length() == 1 && isdigit(input[0]))
