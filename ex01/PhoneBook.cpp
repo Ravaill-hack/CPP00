@@ -4,6 +4,10 @@
 PhoneBook::PhoneBook()
 {
 	ind_next_contact = 0;
+	for (int i = 0; i < 8; i++)
+	{
+		contacts[i].set_contact("", "", "", "", "");
+	}
 }
 
 void	PhoneBook::add_contact()
@@ -32,7 +36,7 @@ void	PhoneBook::search_contact() const
 			  << std::setw(13) << "First name | "
 			  << std::setw(13) << "Last name | "
 			  << std::setw(10) << "Nickname" << std::endl;
-	for (int i = 0; i < ind_next_contact; i++)
+	for (int i = 0; i < 8; i++)
 	{
 		contacts[i].print_short(i);
 	}
