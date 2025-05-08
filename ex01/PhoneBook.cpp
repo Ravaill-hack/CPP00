@@ -25,9 +25,14 @@ void	PhoneBook::add_contact()
 	std::cout << "Darkest secret : ";
 	std::getline(std::cin, ds);
 
-	contacts[ind_next_contact].set_contact(fn, ln, nn, pn, ds);
-	ind_next_contact = (ind_next_contact + 1) % 8;
-	std::cout << "Contact successfully added." << std::endl;
+	if(!fn.empty() && !ln.empty() && !nn.empty() && !pn.empty() && !ds.empty())
+	{
+		contacts[ind_next_contact].set_contact(fn, ln, nn, pn, ds);
+		ind_next_contact = (ind_next_contact + 1) % 8;
+		std::cout << "Contact successfully added." << std::endl;
+	}
+	else
+		std::cout << "Contact not added, there is one or several empty fields." << std::endl;
 }
 
 void	PhoneBook::search_contact() const
@@ -46,7 +51,7 @@ void	PhoneBook::search_contact() const
 	if (input.length() == 1 && isdigit(input[0]))
 	{
 		int	i = input[0] - '0';
-		if (i >= 0 && i < ind_next_contact)
+		if (i >= 0 && i < 8)
 			contacts[i].print_contact();
 		else
 			std::cout << "Invalid index" << std::endl;
